@@ -1,3 +1,4 @@
+--CLIENTES
 insert into clientes (idcliente, nome, cpf, rg, data_nascimento, genero, profissao, nacionalidade, logradouro, numero, complemento, bairro, municipio, uf)
 values (1, 'Manoel', '88828383821', '32323', '2001-01-30', 'M', 'Estudante', 'Brasileiro', 'R. Joaquim', '23', 'Casa', 'Cidade', 'Uniao', 'SC');
 
@@ -43,3 +44,85 @@ values (14, 'Jeferson','1983-07-01', 'M', 'Brasileiro','Uniao da Vitória', 'PR'
 
 insert into clientes (idcliente, nome, genero, profissao, municipio, uf)
 values (15, 'Jessica','F', 'Estudante', 'Uniao da Vitoria', 'PR');
+
+--PROFISSÕES
+INSERT INTO profissao (idprofissao, nome)
+VALUES (1, 'Estudante');
+INSERT INTO profissao (idprofissao, nome)
+VALUES (2, 'Engenheiro');
+INSERT INTO profissao (idprofissao, nome)
+VALUES (3, 'Pedreiro');
+INSERT INTO profissao (idprofissao, nome)
+VALUES (4, 'Jornalista');
+INSERT INTO profissao (idprofissao, nome)
+VALUES (5, 'Professor');
+
+--NACIONALIDADE
+INSERT INTO nacionalidade (idnacionalidade, nome)
+VALUES (1, 'Brasileira');
+INSERT INTO nacionalidade (idnacionalidade, nome)
+VALUES (2, 'Italiana');
+INSERT INTO nacionalidade (idnacionalidade, nome)
+VALUES (3, 'Norte-Americana');
+INSERT INTO nacionalidade (idnacionalidade, nome)
+VALUES (4, 'Alemã');
+
+--COMPLEMENTO
+INSERT INTO COMPLEMENTO (idcomplemento, nome)
+VALUES (1, 'Casa');
+
+INSERT INTO COMPLEMENTO (idcomplemento, nome)
+VALUES (2, 'Apartamento');
+
+--BAIRRO
+INSERT INTO bairro (idbairro, nome)
+VALUES (1, 'Cidade Nova');
+INSERT INTO bairro (idbairro, nome)
+VALUES (2, 'Centro');
+INSERT INTO bairro (idbairro, nome)
+VALUES (3, 'São Pedro');
+INSERT INTO bairro (idbairro, nome)
+VALUES (4, 'Santa Rosa');
+
+
+--UF
+SELECT * FROM uf
+insert into uf (iduf, nome, sigla)
+VALUES (1, 'Santa Catarina', 'SC');
+insert into uf (iduf, nome, sigla)
+VALUES (2, 'Parana', 'PR');
+insert into uf (iduf, nome, sigla)
+VALUES (3, 'Sao Paulo', 'SP');
+insert into uf (iduf, nome, sigla)
+VALUES (4, 'Minas Gerais', 'MG');
+insert into uf (iduf, nome, sigla)
+VALUES (5, 'Rio Grande do Sul', 'rs');
+insert into uf (iduf, nome, sigla)
+VALUES (6, 'Rio de Janeiro', 'RJ');
+
+
+--MUNICIPIOS
+SELECT * FROM municipio
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (1, 'Porto União', 1);
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (2, 'Canoinhas', 1);
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (3, 'Porto Vitoria', 2); 
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (4, 'General Carneiro', 2); 
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (5, 'São Paulo', 3); 
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (6, 'Rio de Janeiro', 6); 
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (7, 'Uberlandia', 4);
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (8, 'Porto Alegre', 5);
+INSERT INTO municipio (idmunicipio, nome, iduf)
+VALUES (9, 'Uniao da Vitoria', 2);
+
+
+
+
+
