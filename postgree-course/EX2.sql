@@ -1,53 +1,79 @@
-SELECT idvendedor, AVG(valor)
-FROM pedido
-GROUP BY idvendedor HAVING SUM(valor) > 200
+SELECT idvendedor, avg(valor) from pedido group by idvendedor having avg(valor) > 300
 
-SELECT idvendedor, SUM(valor)
-FROM pedido
-GROUP BY idvendedor HAVING sum(valor) > 1500
+select idvendedor, sum(valor) from pedido group by idvendedor having sum(valor) > 1500
 
-SELECT idvendedor, SUM(valor)
-FROM pedido 
-GROUP BY idvendedor
+select idvendedor, sum(valor) from pedido group by idvendedor
 
-SELECT COUNT(idmunicipio)
-FROM municipio
+select count(idmunicipio) from municipio
 
-SELECT COUNT(idmunicipio)
-FROM municipio
-WHERE iduf = 1 OR iduf = 2
+select count(idmunicipio) from municipio where iduf = 1 or iduf = 2
 
-SELECT iduf, count(idmunicipio)
-FROM municipio
-GROUP BY iduf
+select iduf, count(idmunicipio) from municipio group by iduf
 
-SELECT COUNT(idcliente)
-FROM clientes
-WHERE logradouro IS NOT NULL
+select count(idcliente) from cliente where logradouro is not null
 
-SELECT count(idcliente), idmunicipio
-FROM clientes
-GROUP BY idmunicipio
+select idmunicipio, count(idcliente) from cliente group by idmunicipio
 
-SELECT COUNT(idfornecedor)
-FROM fornecedor
+select count(idfornecedor) from fornecedor
 
-SELECT COUNT(idproduto), idfornecedor
-FROM produto
-GROUP BY idfornecedor
+select idfornecedor, count(idproduto) from produto group by idfornecedor
 
-SELECT AVG(valor)
-FROM produto
-WHERE idfornecedor = 1
+select avg(valor) from produto where idfornecedor = 1
 
-SELECT SUM(valor)
-FROM produto
+select sum(valor) from produto
 
---pulando 13 e 14
+select nome, valor from produto order by valor desc limit 1
 
-SELECT AVG(valor)
-FROM produto
+select nome, valor from produto order by valor asc limit 1
 
-SELECT COUNT(idtransportadora)
-FROM transportadora
+select avg(valor) from produto
 
+select count(idtransportadora) from transportadora
+
+select avg(valor) from pedido
+
+select idcliente, sum(valor) from pedido group by idcliente
+
+select idvendedor, sum(valor) from pedido group by idvendedor
+
+select idtransportadora, sum(valor) from pedido group by idtransportadora
+
+select data_pedido, sum(valor) from pedido group by data_pedido
+
+select idcliente, idvendedor, idtransportadora, sum(valor) from pedido group by idcliente, idvendedor, idtransportadora
+
+select sum(valor) from pedido where data_pedido between '2008-04-01' and '2009-12-10' and valor > 200
+
+select avg(valor) from pedido where idvendedor = 1
+
+select avg(valor) from pedido where idcliente = 15
+
+select count(idpedido) from pedido where idtransportadora = 1
+
+select idvendedor, count(idpedido) from pedido group by idvendedor
+
+select idcliente, count(idpedido) from pedido group by idcliente
+
+select count(idpedido) from pedido where data_pedido between '2008-04-15' and '2008-04-25'
+
+select count(idpedido) from pedido where valor > 1000
+
+select sum(quantidade) from pedido_produto where idproduto = 1
+
+select idproduto, sum(quantidade) from pedido_produto group by idproduto
+
+select idpedido, sum(valor_unitario) from pedido_produto group by idpedido
+
+select idpedido, sum(quantidade) from pedido_produto group by idpedido
+
+select sum(valor_unitario) from pedido_produto
+
+select avg(valor_unitario) from pedido_produto where idpedido = 6
+
+select max(valor_unitario) from pedido_produto
+
+select min(valor_unitario) from pedido_produto
+
+select idpedido, sum(quantidade) from pedido_produto group by idpedido
+
+select sum(valor_unitario) from pedido_produto
